@@ -20,14 +20,12 @@ const execute = async (command) => {
 
 const main = async () => {
 	try {
-		const workplace = process.env.GITHUB_WORKSPACE;
+		/* const workplace = process.env.GITHUB_WORKSPACE; */
 		const result = await execute('pwd');
 		console.log('result is as follows\n');
 		console.log(`${result}`);
-		const result2 = await execute('/bin/bash cd ' + workplace);
+		const result2 = await execute('ls -al');
 		console.log(`${result2}`);
-		const result3 = await execute('ls');
-		console.log(`${result3}`);
 	} catch (error) {
 		core.setFailed(error.message);
 	}
