@@ -22,10 +22,7 @@ const main = async () => {
 	try {
 		/* const workplace = process.env.GITHUB_WORKSPACE; */
 		const result = await execute('pwd');
-		console.log('result is as follows\n');
-		console.log(`${result}`);
-		const result2 = await execute('ls -al');
-		console.log(`${result2}`);
+		await execute("find -name '**.md*'");
 	} catch (error) {
 		core.setFailed(error.message);
 	}
