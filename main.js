@@ -21,6 +21,7 @@ const execute = async (command) => {
 const main = async () => {
 	try {
 		const result = await execute('ls');
+		console.log('result is as follows\n');
 		console.log(`${result}`);
 	} catch (error) {
 		core.setFailed(error.message);
