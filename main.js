@@ -6,10 +6,10 @@ const writeGood = require('write-good');
 let output = '';
 const options = {};
 options.listeners = {
-	stdout: (data: Buffer) => {
+	stdout: (data) => {
 		output += data.toString();
 	},
-	stderr: (data: Buffer) => {
+	stderr: (data) => {
 		console.error(data);
 	}
 };
