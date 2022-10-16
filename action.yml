@@ -1,0 +1,5 @@
+name: 'write-good action'
+description: 'Run write-good on all the files of the repository'
+runs:
+  using: 'node16'
+  main: 'main.js'
