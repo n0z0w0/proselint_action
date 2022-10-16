@@ -21,8 +21,8 @@ const execute = async (command) => {
 const main = async () => {
 	try {
 		/* const workplace = process.env.GITHUB_WORKSPACE; */
-		const result = await execute('pwd');
-		await execute("find -name '**.md*'");
+		await execute('pwd');
+		await execute("find -name '*.md'");
 	} catch (error) {
 		core.setFailed(error.message);
 	}
