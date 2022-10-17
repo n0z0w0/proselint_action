@@ -26,7 +26,11 @@ const main = async () => {
 		await execute('ls');
 		const result = await execute("find -name \*.md");
 		const files = result.split('\n');
-		files.map(x => console.log(`${x}`));
+		for (const file of files){
+			const text = fs.readFileSync(file, 'utf8');
+			const suggest = writeGood(text);
+			console.log(suggest);
+		}
 	} catch (error) {
 		core.setFailed(error.message);
 	}
