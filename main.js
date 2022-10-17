@@ -27,6 +27,7 @@ const main = async () => {
 		const result = await execute("find -name \*.md");
 		const files = result.split('\n');
 		for (const file of files){
+			if (file === '') break;
 			console.log(file);
 			const text = fs.readFileSync(file, 'utf8');
 			const suggest = writeGood(text);
